@@ -5,13 +5,11 @@ date:   2021-01-14 20:00:00 -0300
 categories: geral
 ---
 
-{% highlight ruby %}
-
+{% highlight c %}
 #include <stdio.h>
 
 int main() {
     printd("Hello world.");
-
     return 0;
 }
 

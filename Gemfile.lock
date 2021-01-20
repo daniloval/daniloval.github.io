@@ -1,3 +1,18 @@
+GIT
+  remote: https://github.com/algolia/jekyll-algolia.git
+  revision: ff6440d2bd55f2028f18de379ed149960cd89721
+  ref: refs/pull/126/head
+  specs:
+    jekyll-algolia (1.4.9)
+      algolia_html_extractor (~> 2.6)
+      algoliasearch (= 1.24)
+      filesize (~> 0.1)
+      jekyll (~> 3.0)
+      json (~> 2.0)
+      nokogiri (~> 1.6)
+      progressbar (~> 1.9)
+      verbal_expressions (~> 0.1.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -9,6 +24,12 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    algolia_html_extractor (2.6.4)
+      json (~> 2.0)
+      nokogiri (~> 1.10)
+    algoliasearch (1.24.0)
+      httpclient (~> 2.8, >= 2.8.3)
+      json (>= 1.5.1)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -32,6 +53,7 @@ GEM
       ruby2_keywords
     faraday-net_http (1.0.1)
     ffi (1.14.2)
+    filesize (0.2.0)
     forwardable-extended (2.6.0)
     gemoji (3.0.1)
     github-pages (209)
@@ -88,6 +110,7 @@ GEM
       activesupport (>= 2)
       nokogiri (>= 1.4)
     http_parser.rb (0.6.0)
+    httpclient (2.8.3)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jekyll (3.9.0)
@@ -115,6 +138,8 @@ GEM
       commonmarker (~> 0.17.6)
       jekyll-commonmark (~> 1.2)
       rouge (>= 2.0, < 4.0)
+    jekyll-compose (0.12.0)
+      jekyll (>= 3.7, < 5.0)
     jekyll-default-layout (0.1.4)
       jekyll (~> 3.0)
     jekyll-feed (0.15.1)
@@ -192,10 +217,13 @@ GEM
       jekyll (>= 3.3, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
+    jekyll-youtube (1.0.0)
+      jekyll
     jemoji (0.12.0)
       gemoji (~> 3.0)
       html-pipeline (~> 2.2)
       jekyll (>= 3.0, < 5.0)
+    json (2.5.1)
     kramdown (2.3.0)
       rexml
     kramdown-parser-gfm (1.1.0)
@@ -218,6 +246,7 @@ GEM
       sawyer (~> 0.8.0, >= 0.5.3)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
+    progressbar (1.11.0)
     public_suffix (3.1.1)
     racc (1.5.2)
     rb-fsevent (0.10.4)
@@ -251,6 +280,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.7)
     unicode-display_width (1.7.0)
+    verbal_expressions (0.1.5)
     zeitwerk (2.4.2)
 
 PLATFORMS
@@ -258,11 +288,17 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-algolia!
+  jekyll-compose
   jekyll-feed (~> 0.12)
+  jekyll-mentions
+  jekyll-paginate
+  jekyll-sitemap
+  jekyll-youtube
   minima (~> 2.5)
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)
 
 BUNDLED WITH
-   2.2.5
+   2.2.6

@@ -32,6 +32,19 @@ github_username:  daniloval
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-mentions
+  - jekyll-paginate
+  - jekyll-compose
+  - jekyll-algolia
+  - jekyll-youtube
+
+utterance:
+  repo: daniloval//daniloval.github.io
+  issue-term: title
+  theme: github-light
+
+  label: blog-comments # Choose the label that will be assigned to issues created by Utterances.
 
 # Exclude from processing.
 # The following items will not be processed, by default.
