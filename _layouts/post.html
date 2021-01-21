@@ -2,36 +2,71 @@
 layout: default
 ---
 
-<!--
 <style>
-    .share-page {
-        text-align: center;
-        /* background: $secondary-color; */
-        /* color: $light-color; */
-        padding: 8px 15px;
-        border-radius: 5px;
-        /* margin: 1.5 * $spacing-unit 0; */
-        }
+    .wrapper {
+        position: relative;
+        padding: 70;
+        margin: 50;
+        padding-bottom: 50;
+    }
+    .buttonsgrid {
+        float: right;
+        width: 30%;
+    }
+    .title {
+        position: absolute;
+        left: 0;
+        width: 70%;
+        top: 0;
+        bottom: 0;
+    }
+    .socialbutton {
+        float: right;
+        left: 0;
+        margin: 1px;
+        width: 40px;
+        height: 40px;
+    }
+    .share-button {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .twitter {
+        background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI2MHB4IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2MCA2MCIgd2lkdGg9IjYwcHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48dGl0bGUvPjxkZXNjLz48ZGVmcy8+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBpZD0ic29pY2FsIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSI+PGcgaWQ9InNvY2lhbCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE3My4wMDAwMDAsIC0xMzguMDAwMDAwKSI+PGcgaWQ9InNsaWNlcyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTczLjAwMDAwMCwgMTM4LjAwMDAwMCkiLz48ZyBmaWxsPSIjNDE4NkNEIiBpZD0ic3F1YXJlLWZsYXQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE3My4wMDAwMDAsIDEzOC4wMDAwMDApIj48cGF0aCBkPSJNMi45OTU5Mzc0MywwIEw1Ny4wMDQwNjI2LDAgQzU4LjY1ODY3MzEsMCA2MCwxLjMzNzMwOTc0IDYwLDIuOTk1OTM3NDMgTDYwLDU3LjAwNDA2MjYgQzYwLDU4LjY1ODY3MzEgNTguNjYyNjkwMyw2MCA1Ny4wMDQwNjI2LDYwIEwyLjk5NTkzNzQzLDYwIEMxLjM0MTMyNjg4LDYwIDAsNTguNjYyNjkwMyAwLDU3LjAwNDA2MjYgTDAsMi45OTU5Mzc0MyBDMCwxLjM0MTMyNjg4IDEuMzM3MzA5NzQsMCAyLjk5NTkzNzQzLDAgWiIgaWQ9InNxdWFyZSIvPjwvZz48ZyBmaWxsPSIjRkZGRkZGIiBpZD0iaWNvbiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTgyLjAwMDAwMCwgMTUwLjAwMDAwMCkiPjxwYXRoIGQ9Ik0zMi4wNTIxMzg1LDYuNDM2Njk0MjcgQzMwLjg0MzE4NDYsNS4wNjIyMDE1IDI5LjEyMDUzODUsNC4xODY0NjQxIDI3LjIxNDA2MTUsNC4xNTQ3MzEwMyBDMjMuNTUzNiw0LjA5MzgwMzA5IDIwLjU4NTY1MzgsNy4xODY5MjMzOSAyMC41ODU2NTM4LDExLjA2MzExNiBDMjAuNTg1NjUzOCwxMS42MTMyNDEyIDIwLjY0NDI5MjMsMTIuMTQ5NjkzNCAyMC43NTczNjkyLDEyLjY2NDY3MzIgQzE1LjI0ODU4NDYsMTIuMzA3MzUyNiAxMC4zNjQ0NjkyLDkuNDM4NzcwNTkgNy4wOTU0MTUzOCw1LjExNDcyMTggQzYuNTI0ODYxNTQsNi4xNTA4NjE3IDYuMTk3OTA3NjksNy4zNjE4ODI3MSA2LjE5NzkwNzY5LDguNjU5MTUwMzcgQzYuMTk3OTA3NjksMTEuMTE0OTg4NCA3LjM2ODA5MjMxLDEzLjI5NDUyNzIgOS4xNDY2MzA3NywxNC41ODE0MTc0IEM4LjA2MDEyMzA4LDE0LjUzMzQ0OTkgNy4wMzgwNjkyMywxNC4yMDQ1Mzc4IDYuMTQ0NDM4NDYsMTMuNjY0OTUyIEM2LjE0Mzc5MjMxLDEzLjY5NDQ0NSA2LjE0Mzc5MjMxLDEzLjcyMzk0NDkgNi4xNDM3OTIzMSwxMy43NTM5NjI1IEM2LjE0Mzc5MjMxLDE3LjE4MzU0OTcgOC40Mjg1OTIzMSwyMC4wNjA3MDc2IDExLjQ2MDgzMDgsMjAuNzMwOTM4MyBDMTAuOTA0NjUzOCwyMC44ODg1MzggMTAuMzE5MDc2OSwyMC45NzEwMTYzIDkuNzE0NiwyMC45NjcwMDggQzkuMjg3NDkyMzEsMjAuOTY0MTc1OCA4Ljg3MjE3NjkyLDIwLjkxNjgxMTggOC40Njc1MjMwOCwyMC44MzE3NjggQzkuMzEwOTE1MzgsMjMuNjQ0Mzc3NyAxMS43NTg3MDc3LDI1LjY5Njc2NjMgMTQuNjU5MjkyMywyNS43NjQ2MjggQzEyLjM5MDgwNzcsMjcuNjQ3Njk2MyA5LjUzMjg2OTIzLDI4Ljc2OTE5MzMgNi40MjcyOTIzMSwyOC43NjI3ODcgQzUuODkyMjc2OTIsMjguNzYxNjgzMyA1LjM2NDY5MjMxLDI4LjcyNzExMiA0Ljg0NjE1Mzg1LDI4LjY2MDU5OTYgQzcuNzc5NTMwNzcsMzAuNjczMzEzOSAxMS4yNjM1OTIzLDMxLjg0NTE3MTEgMTUuMDA2NzYxNSwzMS44NDYxNTMxIEMyNy4xOTg1NTM4LDMxLjg0OTM1MTggMzMuODY1NzMwOCwyMS4yMzk1MTA5IDMzLjg2NTczMDgsMTIuMDM2NzY4NyBDMzMuODY1NzMwOCwxMS43MzQ4MzYzIDMzLjg1OTEwNzcsMTEuNDM0NTE5MSAzMy44NDY1MDc3LDExLjEzNTY1MiBDMzUuMTQxNTYxNSwxMC4xNzA2NjY1IDM2LjI2NTIyMzEsOC45NjA3ODkxNSAzNy4xNTM4NDYyLDcuNTc5MjE5MDEgQzM1Ljk2NTI0NjIsOC4xMTUwMTYxNSAzNC42ODc2Mzg1LDguNDcwODY4NjMgMzMuMzQ3MDMwOCw4LjYyMDEzNzg5IEMzNC43MTU0MjMxLDcuNzc3OTY1MTggMzUuNzY2NTUzOCw2LjQzMDA5NjA3IDM2LjI2MTM0NjIsNC44MTM3NTg0IEMzNC45ODA1MDc3LDUuNTkwNDkyMjkgMzMuNTYyMDM4NSw2LjE0NzUxMjg2IDMyLjA1MjEzODUsNi40MzY2OTQyNyBaIiBpZD0idHdpdHRlciIvPjwvZz48L2c+PC9nPjwvc3ZnPg==");
+    }
+    .linkedin {
+        background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI2MHB4IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2MCA2MCIgd2lkdGg9IjYwcHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48dGl0bGUvPjxkZXNjLz48ZGVmcy8+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBpZD0ic29pY2FsIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSI+PGcgaWQ9InNvY2lhbCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTc3My4wMDAwMDAsIC0xMzguMDAwMDAwKSI+PGcgaWQ9InNsaWNlcyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTczLjAwMDAwMCwgMTM4LjAwMDAwMCkiLz48ZyBmaWxsPSIjMzQ2REE2IiBpZD0ic3F1YXJlLWZsYXQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE3My4wMDAwMDAsIDEzOC4wMDAwMDApIj48cGF0aCBkPSJNNjAyLjk5NTkzNywwIEw2NTcuMDA0MDYzLDAgQzY1OC42NTg2NzMsMCA2NjAsMS4zMzczMDk3NCA2NjAsMi45OTU5Mzc0MyBMNjYwLDU3LjAwNDA2MjYgQzY2MCw1OC42NTg2NzMxIDY1OC42NjI2OSw2MCA2NTcuMDA0MDYzLDYwIEw2MDIuOTk1OTM3LDYwIEM2MDEuMzQxMzI3LDYwIDYwMCw1OC42NjI2OTAzIDYwMCw1Ny4wMDQwNjI2IEw2MDAsMi45OTU5Mzc0MyBDNjAwLDEuMzQxMzI2ODggNjAxLjMzNzMxLDAgNjAyLjk5NTkzNywwIFoiIGlkPSJzcXVhcmUtNyIvPjwvZz48ZyBmaWxsPSIjRkZGRkZGIiBpZD0iaWNvbiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTgyLjAwMDAwMCwgMTUwLjAwMDAwMCkiPjxwYXRoIGQ9Ik02MTIuODgzMDc1LDMxLjgyMzE1MTIgTDYxMi44ODMwNzUsMTMuNTI0MzM4OSBMNjA3LjIyNzM3LDEzLjUyNDMzODkgTDYwNy4yMjczNywzMS44MjMxNTEyIEw2MTIuODgzMDc1LDMxLjgyMzE1MTIgWiBNNjEyLjg4MzA3NSw3LjAzODIxNDU1IEM2MTIuODQ5Mzg4LDUuNDAwNjU5OTYgNjExLjc1ODAxNiw0LjE1Mzg0NjE1IDYwOS45ODUwNTQsNC4xNTM4NDYxNSBDNjA4LjIxMTYzMiw0LjE1Mzg0NjE1IDYwNy4wNTI4ODUsNS40MDA2NTk5NiA2MDcuMDUyODg1LDcuMDM4MjE0NTUgQzYwNy4wNTI4ODUsOC42NDAyMDIzNCA2MDguMTc3OTQ0LDkuOTIzMDc2OTIgNjA5LjkxNzIxOSw5LjkyMzA3NjkyIEw2MDkuOTUwOTA2LDkuOTIzMDc2OTIgQzYxMS43NTgwMTYsOS45MjMwNzY5MiA2MTIuODgzMDc1LDguNjQwMjAyMzQgNjEyLjg4MzA3NSw3LjAzODIxNDU1IFogTTYyMi4xMTAwNDIsMzEuODIzMTUxNyBMNjIyLjExMDA0MiwyMS4zOTczNzI5IEM2MjIuMTEwMDQyLDIwLjgzOTQwMTQgNjIyLjE1MDM3LDIwLjI4MTQzIDYyMi4zMTQ0NDcsMTkuODgzNjY4MiBDNjIyLjc2MzAzNCwxOC43NjgyNzc4IDYyMy43ODM5NTYsMTcuNjEzNjYzNyA2MjUuNDk4MTk5LDE3LjYxMzY2MzcgQzYyNy43NDM4OTYsMTcuNjEzNjYzNyA2MjkuMTUyMjc4LDE4Ljg4ODE1ODcgNjI5LjE1MjI3OCwyMS4zOTczNzI3IEw2MjkuMTUyMjc4LDMxLjgyMzE1MTYgTDYzNC44NDYxNTQsMzEuODIzMTUxNyBMNjM0Ljg0NjE1NCwyMS4xMTgzODcyIEM2MzQuODQ2MTU0LDE1LjM4Mzk4NzggNjMxLjc4NTA0NSwxMi43MTU2NjkgNjI3LjcwMTkxLDEyLjcxNTY2OSBDNjI0LjM1NDA4MSwxMi43MTU2NjkgNjIyLjg4NDU3MiwxNC41ODczNTkzIDYyMi4wNjg2MDgsMTUuODYxMzAyIEw2MjIuMTA5NDg5LDEzLjQxMzkxMjMgTDYxNi40MjU0NjIsMTMuNDEzOTEyMyBDNjE2LjUwNzIyNCwxNS4xNjU3MjE1IDYxNi40MjU0NjIsMzEuODIzMTUxNiA2MTYuNDI1NDYyLDMxLjgyMzE1MTYgTDYyMi4xMTAwNDIsMzEuODIzMTUxNyBaIiBpZD0ibGlua2VkaW4iLz48L2c+PC9nPjwvZz48L3N2Zz4=");
+    }
+    .facebook {
+        background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI2MHB4IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2MCA2MCIgd2lkdGg9IjYwcHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48dGl0bGUvPjxkZXNjLz48ZGVmcy8+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBpZD0ic29pY2FsIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSI+PGcgaWQ9InNvY2lhbCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI3My4wMDAwMDAsIC0xMzguMDAwMDAwKSI+PGcgaWQ9InNsaWNlcyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTczLjAwMDAwMCwgMTM4LjAwMDAwMCkiLz48ZyBmaWxsPSIjMzQ2REE2IiBpZD0ic3F1YXJlLWZsYXQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE3My4wMDAwMDAsIDEzOC4wMDAwMDApIj48cGF0aCBkPSJNMTAyLjk5NTkzNywwIEwxNTcuMDA0MDYzLDAgQzE1OC42NTg2NzMsMCAxNjAsMS4zMzczMDk3NCAxNjAsMi45OTU5Mzc0MyBMMTYwLDU3LjAwNDA2MjYgQzE2MCw1OC42NTg2NzMxIDE1OC42NjI2OSw2MCAxNTcuMDA0MDYzLDYwIEwxMDIuOTk1OTM3LDYwIEMxMDEuMzQxMzI3LDYwIDEwMCw1OC42NjI2OTAzIDEwMCw1Ny4wMDQwNjI2IEwxMDAsMi45OTU5Mzc0MyBDMTAwLDEuMzQxMzI2ODggMTAxLjMzNzMxLDAgMTAyLjk5NTkzNywwIFoiIGlkPSJzcXVhcmUtMiIvPjwvZz48ZyBmaWxsPSIjRkZGRkZGIiBpZD0iaWNvbiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTgyLjAwMDAwMCwgMTUwLjAwMDAwMCkiPjxwYXRoIGQ9Ik0xMTYuNDYyMjI0LDM1LjMxNDMxMyBMMTE2LjQ2MjIyNCwxNy45OTg5NjEzIEwxMTIuOTQzMjg5LDE3Ljk5ODk2MTIgTDExMi45NDMyODksMTIuMjU5MzU2MyBMMTE2LjQ2MjIyNCwxMi4yNTkzNTYzIEwxMTYuNDYyMjI0LDguNzg4Mzg2NDEgQzExNi40NjIyMjQsNC4xMDY2NDIyMiAxMTcuODYxOTk1LDAuNzMwNjE4OTg2IDEyMi45ODgxMDIsMC43MzA2MTg5ODYgTDEyOS4wODYzNiwwLjczMDYxODk4NiBMMTI5LjA4NjM2LDYuNDU4NDM5OTYgTDEyNC43OTIyNTUsNi40NTg0Mzk5NiBDMTIyLjY0MTg5NCw2LjQ1ODQzOTk2IDEyMi4xNTE4NzQsNy44ODczNzYzIDEyMi4xNTE4NzQsOS4zODM3NjA5NSBMMTIyLjE1MTg3NCwxMi4yNTkzNTUzIEwxMjguNzY5NDIzLDEyLjI1OTM1NTggTDEyNy44NjYxNzMsMTcuOTk4OTYxMyBMMTIyLjE1MTg3NCwxNy45OTg5NjEzIEwxMjIuMTUxODc0LDM1LjMxNDMxMjMgTDExNi40NjIyMjQsMzUuMzE0MzEzIFoiIGlkPSJmYWNlYm9vayIvPjwvZz48L2c+PC9nPjwvc3ZnPg==");
+    }
 </style>
 
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v9.0" nonce="uLP3TWiP"></script>
-
-
-<div class="share-page">
-    <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}" class="twitter-mention-button" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-    <div class="fb-share-button" data-href="{{site.url}}{{page.url}}" data-layout="button_count"></div>
-    http://www.reddit.com/submit?url=<URL>&title=<TITLE></TITLE>
-
-    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{site.url}}{{page.url}}&title={{page.title}}&summary={{page.description}}&source=Chillyfacts" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
-        <img src="http://chillyfacts.com/wp-content/uploads/2017/06/LinkedIN.gif" alt="" width="54" height="20" />
-    </a>
-</div> -->
-
 <article class="post container">
-	<h2>{{ page.title }}</h2>
+
+    <div class="wrapper clearfix">
+        <div class="title"><h2>{{ page.title }}</h2></div>
+        <div class="buttonsgrid">
+            <div class="wrapper clearfix">
+                <div class="socialbutton">
+                     <a  href="https://www.linkedin.com/shareArticle?mini=true&url={{site.url}}{{page.url}}&title={{page.title}}&summary={{page.description}}&source=Chillyfacts" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" id="linkedin-share-btt" rel="nofollow" target="_blank" class="share-button linkedin"></a>
+                </div>
+                <div class="socialbutton">
+                    <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" id="twitter-share-btt" rel="nofollow" target="_blank" class="share-button twitter"></a>
+                </div>
+                <div class="socialbutton">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{site.url}}{{page.url}}" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" id="facebook-share-btt" rel="nofollow" target="_blank" class="share-button facebook"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+	<!-- <h2>{{ page.title }}</h2> -->
 	<div class="post-meta span-3">
 		<time class="pill" datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %d, %Y" }}</time>
 	</div>
@@ -41,9 +76,9 @@ layout: default
 </article>
 
 <script src="https://utteranc.es/client.js"
-        repo="daniloval/daniloval.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
+    repo="daniloval/daniloval.github.io"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
 </script>
