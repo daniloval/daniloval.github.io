@@ -22,6 +22,7 @@ group :jekyll_plugins do
   gem "jekyll-compose"
   gem "jekyll-algolia", github: "algolia/jekyll-algolia", ref: "refs/pull/126/head"
   gem "jekyll-youtube"
+  gem 'jekyll-analytics'
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
