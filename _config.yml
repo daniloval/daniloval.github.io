@@ -6,7 +6,7 @@ description: > # this means to ignore newlines until "show_excerpts:"
   Desenvolvimento de software, tecnologia e afins.
 show_excerpts: false # set to true to show excerpts on the homepage
 
-newsletter: https://tinyletter.com/o_gabsferreira
+google_analytics: G-ETDZVH7XPP
 
 # Minima date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
@@ -42,7 +42,6 @@ jekyll_analytics:
     id: G-ETDZVH7XPP        # Required - replace with your tracking id
     anonymizeIp: true       # Optional - Default: false - set to true for anonymized tracking
 
-google_analytics: G-ETDZVH7XPP
 
 # Build settings
 theme: minima
