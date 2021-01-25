@@ -2,7 +2,8 @@
 layout: post
 title:  "Hello World!"
 date:   2021-01-14 20:00:00 -0300
-description: "Test description"
+description: "É assim que tudo começa..."
+permalink: /hello-world/
 categories: geral
 ---
 
@@ -24,4 +25,4 @@ Iniciamos esse projeto em 2021, com intuito de compartilhar e criar grandes hist
 <br><br>
 <blockquote>Vem comigo, que no caminho eu te explico...</blockquote>
 
- [1]: https://twitter.com/search?q=helloworld&src=typed_query)
+ [1]: https://twitter.com/search?q=helloworld&src=typed_query
