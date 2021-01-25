@@ -41,7 +41,9 @@ jekyll_analytics:
   GoogleAnalytics:          # Add, if you want to track with Google Analytics
     id: G-ETDZVH7XPP        # Required - replace with your tracking id
     anonymizeIp: true       # Optional - Default: false - set to true for anonymized tracking
-  
+
+google_analytics: G-ETDZVH7XPP
+
 # Build settings
 theme: minima
 
