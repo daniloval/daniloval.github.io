@@ -75,7 +75,11 @@ layout: default
 <article class="post container">
 
     <div class="wrapper clearfix">
-        <div class="title"><h2>{{ page.title }}</h2></div>
+        <div class="title">
+            <h2>{{ page.title }}</h2>
+            <h4>{% include reading-time.html %}</h4>
+        </div>
+        <br>
         <div class="buttonsgrid">
             <div class="wrapper clearfix">
                 <div class="socialbutton">
