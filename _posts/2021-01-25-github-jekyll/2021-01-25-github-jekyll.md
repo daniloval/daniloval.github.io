@@ -33,11 +33,11 @@ Esse paradigma, certamente, não é a escolha óbvia para certos aplicativos, ma
 
 Para começar, primeira vamos construir um repositório. Acesse [https://github.com/new][9] e você encontrará uma tela como está.
 
-![Novo Repositorio](image-01.png)
+![Img 01](https://raw.githubusercontent.com/daniloval/daniloval.github.io/main/_posts/2021-01-25-github-jekyll/image-01.png)
 
 Depois de escolher um nome e uma descrição para seu repositório, selecione a opção Criar repositório. Caso tudo corra bem, você será direcionado à sua nova página de repositório. Nada muito diferente até aqui além do endereço/url de seu novo repositório. Anote-o, vamos usá-lo em um minuto.
 
-![Clone Repositorio](image-02.png)
+![Imagem 02](https://raw.githubusercontent.com/daniloval/daniloval.github.io/main/_posts/2021-01-25-github-jekyll/image-02.png)
 
 Na sequência vamos construir nossa primeira página. Crie um novo diretório e em seguida crie um arquivo chamado ```index.html```, com algum HTML simples.
 
@@ -76,13 +76,13 @@ O que fizemos aqui? Estamos iniciando um novo repositório Git no diretório que
 
 Se você atualizar a página do repositório no GitHub, deverá ver agora o arquivo que acabamos de enviar.
 
-![Clone Repositorio](image-03.png)
+![Image 03](https://raw.githubusercontent.com/daniloval/daniloval.github.io/main/_posts/2021-01-25-github-jekyll/image-03.png)
 
 Por fim, precisamos habilitar as páginas do GitHub para este repositório. Na tela mostrada acima, clique em ```Configurações``` e role para baixo até a seção ```Páginas do GitHub```. No seletor de origem, selecione ```master``` como a ramificação a partir da qual construir e clique em ```Salvar```.
 
 Depois disso, você verá uma mensagem confirmando que seu site está pronto para ser publicado e indicando uma URL de acesso. Se você navegar até ela, poderá ver seu novo site.
 
-![Clone Repositorio](image-04.png)
+![Image 04](https://raw.githubusercontent.com/daniloval/daniloval.github.io/main/_posts/2021-01-25-github-jekyll/image-04.png)
 
 #### Inserindo o Jekyll na jogada
 
@@ -136,7 +136,7 @@ git push origin master
 
 Em alguns segundos, você poderá atualizar o URL do GitHub e ver o seu novo site com tecnologia Jekyll em ação.
 
-![Clone Repositorio](image-05.png)
+![Imagem 05](https://raw.githubusercontent.com/daniloval/daniloval.github.io/main/_posts/2021-01-25-github-jekyll/image-05.png)
 
 #### Escolhendo um tema para seu novo site em Jekyll
 
