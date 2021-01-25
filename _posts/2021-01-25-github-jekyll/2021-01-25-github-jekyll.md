@@ -2,7 +2,6 @@
 layout: post
 title:  "GitHub como plataforma para Bloggar"
 date:   2021-01-25 16:00:00 -0300
-permalink: /github-jekyll/
 description: "Quando resolvi construir um blog, o primeiro problema era resolver como entregar o conteúdo,
  Jekyll foi uma maneira elegante e bastante simples."
 categories: 
