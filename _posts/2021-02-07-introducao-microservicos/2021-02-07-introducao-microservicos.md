@@ -57,7 +57,6 @@ Sabemos que microserviços se referem à construção de um sistema por meio da 
 
 Gostou desse post? Considere assinar a Newsletter logo ai abaixo.
 
-<br><br>
 <blockquote>Vem comigo, que no caminho eu te explico...</blockquote>
 
 
