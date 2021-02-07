@@ -14,9 +14,9 @@ Bem, projetar software é bastante complexo. Quando comecei a compreender as ent
 
 Conforme o tamanho e a complexidade dos projetos ao qual eu era inserido aumentavam, eu aprendia que nosso meio de trabalho é responsável por tomar decisões que vão muito além de simplesmente escrever linhas e mais linhas de código, estávamos na verdade transcrevendo histórias que outrora foram executadas por outros seres humanos de forma manual, modificando a maneira como tudo fora feito até ali, acelerando de forma imensurável mercados que nem imaginavam até aquele momento a capacidade de crescimento e revolução que a tecnologia nos trouxe. 
 
-Lembro-me claramente que no começo da carreira eu me achava o desenvolvedor mais incrível do universo, e tinha certeza que era capaz de fazer qualquer coisa. Por uma dessas coincidências da vida, fui jogado quase que sem querer (<s>podemos contar essa história por aqui em outro momento</s>) em uma software house ([Cadena][1]) da minha cidade, foi um tremendo choque de realidade eu absolutamente não sabia de nada e obviamente não fiquei lá por mais de 3 meses isso me colocou na minha primeira crise do impostor (<s>falaremos no futuro também</s>) mas me fez buscar mais e mais conhecimento, e entender naquele momento que estudar e testar coisas, provavelmente seria o que eu faria pela vida toda.
+Lembro-me claramente que no começo da carreira eu me achava o desenvolvedor mais incrível do universo, e tinha certeza que era capaz de fazer qualquer coisa. Por uma dessas coincidências da vida, fui jogado quase que sem querer (<s>podemos contar essa história por aqui em outro momento</s>) em uma software house ([Cadena][1]) da minha cidade, foi um tremendo choque de realidade eu absolutamente não sabia de nada e obviamente não fiquei lá por mais de 3 meses isso me colocou na minha primeira crise do impostor (<s>falaremos no futuro também</s>), mas me fez buscar mais e mais conhecimento, e entender naquele momento que estudar e testar coisas, provavelmente seria o que eu faria pela vida toda.
 
-Durante os anos, novos projetos, times, empresas, e fui apresentado a um papel denominado "Arquiteto de Software", estes são responsáveis por conceber e delinear o panorama geral de um sistema, impactando diretamente (para melhor ou para pior) cada fase do ciclo de vida do projeto, desde o estágio de desenvolvimento até muito depois de seu lançamento final.
+Durante os anos, novos projetos, times, empresas, e fui apresentado a um papel denominado "Arquiteto de Software", estes são responsáveis por conceber e delinear o panorama geral de um sistema, impactando diretamente (<s>para melhor ou para pior</s>) cada fase do ciclo de vida do projeto, desde o estágio de desenvolvimento até muito depois de seu lançamento final.
 
 #### Arquitetura de Software
 
@@ -39,24 +39,32 @@ Em uma abordagem tradicional, normalmente possuímos um único software formado 
 
 Os vários componentes que formam cada uma dessas camadas são agrupados e implantados em um servidor de produção como uma entidade única e unitária.
 
-Vamos imaginar o software de blog construído com essa arquitetura, usando um banco de dados relacional como armazenamento de dados. Se tivéssemos de renderizar uma página com um post específica junto com todos os comentários gerados pelos usuários vinculados a ele, o software consultaria as tabelas de posts e comentários, usando um SQL JOIN ou semelhante, processa e formata os dados conforme necessário e exibir de volta ao cliente. Toda essa comunicação e processamento acontece por meio de chamadas ou requisição única.
+Vamos imaginar que o software deste blog foi construído com essa arquitetura, usando um banco de dados relacional como armazenamento de dados. Se tivéssemos de renderizar uma página com um post específica junto com todos os comentários gerados pelos usuários vinculados a ele, o software consultaria as tabelas de posts e comentários, usando um SQL JOIN ou semelhante, processa e formata os dados conforme necessário e exibir de volta ao cliente. Toda essa comunicação e processamento acontece por meio de chamadas ou requisição única.
 
-![Img 02](https://raw.githubusercontent.com/daniloval/daniloval.github.io/main/_posts/2021-02-07-introducao-microservicos/IMG02.png)
+<style>
+  img[src$="centerme"] {
+    display:block;
+    margin: 0 auto;
+  }
+</style>
+
+![Img 02](https://raw.githubusercontent.com/daniloval/daniloval.github.io/main/_posts/2021-02-07-introducao-microservicos/IMG02.png?style=centerme)
 
 Então, o que exatamente são microserviços e como eles se diferenciam do paradigma monolítico? Sempre que alguém me faz  essa pergunta ou quando estou fazendo uma palestra sobre o assunto, refiro-me a esta citação de Martin Fowler:
 
-"O estilo de arquitetura de microserviços é uma abordagem para desenvolver um único software com um pacote de pequenos serviços, cada um executando em seu próprio processo e se comunicando com mecanismos leves, geralmente uma API de recurso HTTP. Esses serviços são desenvolvidos em torno de recursos de negócios e podem ser implantados de forma independente por meio de máquinas de implantação totalmente automatizadas."
+<blockquote>O estilo de arquitetura de microserviços é uma abordagem para desenvolver um único software com um pacote de pequenos serviços, cada um executando em seu próprio processo e se comunicando com mecanismos leves, geralmente uma API de recurso HTTP. Esses serviços são desenvolvidos em torno de recursos de negócios e podem ser implantados de forma independente por meio de máquinas de implantação totalmente automatizadas.</blockquote>
 
 Com microserviços, os componentes não vivem juntos dentro dos limites de uma única unidade. Em vez disso, essa arquitetura promove o desenvolvimento e a implantação de aplicativos como um conjunto de serviços independentes e autocontidos. Se modificarmos o exemplo acima usando esse estilo de arquitetura, as etapas que seguiríamos para obter o mesmo conteúdo poderiam ser bem diferentes.
 
 Em vez de possuirmos o software consultando um único banco de dados para posts e comentários, poderíamos ter um serviço exclusivo para posts, responsável por armazenar, gerenciar e entregar histórias. O serviço seria executado em seu próprio processo e todas as comunicações de e para ele são estabelecidas por meio de chamadas de rede, processadas por seu próprio servidor web e usando uma API que expõe ao mundo exterior. Se o próprio serviço precisar fazer uso de outros serviços, isso também acontece por meio de chamadas de rede (com exceção de uma conexão a um banco de dados, que pode ou não ser uma chamada direta em processo). Os mesmos princípios também podem ser aplicados ao um serviço de comentários, conforme imagem abaixo.
 
-![Img 03](https://raw.githubusercontent.com/daniloval/daniloval.github.io/main/_posts/2021-02-07-introducao-microservicos/IMG03.png)
+![Img 03](https://raw.githubusercontent.com/daniloval/daniloval.github.io/main/_posts/2021-02-07-introducao-microservicos/IMG03.png?style=centerme)
 
 Sabemos que microserviços se referem à construção de um sistema por meio da composição de vários serviços independentes, mas o que mais define essa arquitetura? Abordaremos os princípios chave dos microserviços e os benefícios associados que eles podem trazer para um software no próximo post.
 
 Gostou desse post? Considere assinar a Newsletter logo ai abaixo.
 
+<br>
 <blockquote>Vem comigo, que no caminho eu te explico...</blockquote>
 
  [1]: https://cadena.com.br/
