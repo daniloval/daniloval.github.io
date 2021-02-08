@@ -53,3 +53,4 @@ plugins:
  - jekyll-seo-tag
  - jekyll-analytics
  - jekyll-postfiles
+ - jekyll-sitemap
